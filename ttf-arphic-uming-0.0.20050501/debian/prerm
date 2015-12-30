@@ -1,0 +1,21 @@
+#!/bin/sh
+set -e
+
+. /usr/share/debconf/confmodule
+
+package=ttf-arphic-uming
+
+FILE1=/etc/defoma/hints/${package}.hints
+FILE2=/etc/defoma/hints/${package}-mbe.hints
+if [ "$1" = "remove" ]; then
+    db_get ttf-arphic-uming/variant
+    if [ "$RET" = "Unicode" ] || [ "$RET" = "Both" ]; then
+        /usr/bin/defoma-font -t purge-all $FILE1
+    fi
+    if [ "$RET" = "MBE" ] || [ "$RET" = "Both" ]; then
+        /usr/bin/defoma-font -t purge-all $FILE2
+	rm -f /usr/share/fonts/truetype/arphic/umingmbe.ttf
+    fi
+fi
+
+#DEBHELPER#

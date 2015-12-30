@@ -1,0 +1,31 @@
+#!/bin/sh
+set -e
+
+package=ttf-arphic-uming
+
+#DEBHELPER#
+
+should_purge_xfonts=
+
+if [ -d /etc/X11/fonts/TrueType ]; then
+    cd /etc/X11/fonts/TrueType
+    for suffix in scale alias; do
+	if [ -f xfonts-arphic-uming.${suffix} ]; then
+	    mv -f xfonts-arphic-uming.${suffix} \
+		  xfonts-arphic-uming.${suffix}.obsolete
+	    should_purge_xfonts=yes
+	fi
+    done
+fi
+
+if [ "$should_purge_xfonts" = "yes" ]; then
+    echo
+    echo '    The "xfonts-arphic-uming" package is obsolete.'
+    echo '    Please run "dpkg --purge xfonts-arphic-uming" manually.'
+    echo '    Please also check in /etc/X11/fonts/TrueType'
+    echo '    and delete "xfonts-arphic-uming.{scale,alias}.obsolete".'
+    echo
+    echo '    More importantly, if you want to use this font in X,'
+    echo '    remember to install the "x-ttcidfont-conf" package!'
+    echo
+fi

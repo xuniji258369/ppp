@@ -1,0 +1,77 @@
+#!/bin/sh
+set -e
+
+. /usr/share/debconf/confmodule
+
+package=ttf-arphic-uming
+fontdir=/usr/share/fonts/truetype/arphic
+xdeltadir=/usr/share/ttf-arphic-uming
+xdeltauni2mbe=uming2mbe.xdelta
+xdeltambe2uni=umingmbe2uming.xdelta
+hintsuni=/etc/defoma/hints/${package}.hints
+hintsmbe=/etc/defoma/hints/${package}-mbe.hints
+
+#DEBHELPER#
+
+   db_get ttf-arphic-uming/variant
+   variant="$RET"
+   if [ "$variant" = "Unicode" ]; then
+      if [ -e ${fontdir}/uming.ttf ]; then
+         if [ -e ${fontdir}/umingmbe.ttf ]; then
+            # reconfigure  "Both" -> "Unicode"
+            rm -f ${fontdir}/umingmbe.ttf;
+         fi
+      elif [ -e ${fontdir}/umingmbe.ttf ]; then
+         # reconfigure "MBE" -> "Unicode"
+         cp ${xdeltadir}/${xdeltambe2uni} ${fontdir}
+         cd ${fontdir}
+         xdelta patch ${xdeltambe2uni} umingmbe.ttf uming.ttf
+         rm -f umingmbe.ttf
+	 rm -f ${xdeltambe2uni};
+      fi
+      /usr/bin/defoma-font -t reregister-all ${hintsuni};
+   elif [ "$variant" = "MBE" ]; then
+      if [ -e ${fontdir}/umingmbe.ttf ]; then
+         if [ -e ${fontdir}/uming.ttf ]; then
+            # reconfigure "Both" -> "MBE"
+	    rm -f ${fontdir}/uming.ttf;
+         fi
+      elif [ -e ${fontdir}/uming.ttf ]; then
+         # reconfigure "Unicode" -> "MBE" or fresh install
+         cp ${xdeltadir}/${xdeltauni2mbe} ${fontdir}
+         cd ${fontdir}
+         xdelta patch ${xdeltauni2mbe} uming.ttf umingmbe.ttf
+         rm -f uming.ttf
+	 rm -f ${xdeltauni2mbe};
+      fi
+      /usr/bin/defoma-font -t reregister-all ${hintsmbe};
+   else
+      if [ ! -e ${fontdir}/uming.ttf ]; then
+         if [ -e ${fontdir}/umingmbe.ttf ]; then
+            # reconfigure "MBE" -> "Both"
+            cp ${xdeltadir}/${xdeltambe2uni} ${fontdir}
+            cd ${fontdir}
+            xdelta patch ${xdeltambe2uni} umingmbe.ttf uming.ttf
+	    rm -f ${xdeltambe2uni};
+         fi
+      elif [ ! -e ${fontdir}/umingmbe.ttf ]; then   
+         if [ -e ${fontdir}/uming.ttf ]; then
+            # reconfigure "Unicode" -> "MBE" or fresh install
+            cp ${xdeltadir}/${xdeltauni2mbe} ${fontdir}
+            cd ${fontdir}
+            xdelta patch ${xdeltauni2mbe} uming.ttf umingmbe.ttf
+	    rm -f ${xdeltauni2mbe};
+         fi
+      fi
+      /usr/bin/defoma-font -t reregister-all ${hintsuni};
+      /usr/bin/defoma-font -t reregister-all ${hintsmbe};
+   fi
+
+   # for fontconfig (>= 2.3.1)
+
+   if [ -d /etc/fonts/conf.d ] && [ -x /usr/bin/fc-cache ]; then
+      cp ${xdeltadir}/${package} /etc/fonts/conf.d/
+      /usr/bin/fc-cache
+   fi
+
+exit 0

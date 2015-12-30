@@ -1,0 +1,178 @@
+ttf-arphic-uming (0.0.20050501-1) unstable; urgency=low
+
+  * completed HKSCS support in Ext.B for radicals 001, 002, 004, 005, 006,
+    009, 011, 013, 014, 016, 017, 019, 020, 021, 022, 023, 025, 026, 027, 028,
+    029, 030, 031, 032, 035, 036, 037, 040, 041, 043, 045, 047, 049, 050, 052,
+    053, 054, 057, 058, 059, 062, 067, 068, 069, 070, 078, 079, 080, 082, 084,
+    087, 090, 091, 098, 100, 101, 103, 107, 108, 114, 115, 116, 117, 118, 119,
+    121, 127, 129, 133, 134, 135, 141, 147, 148, 151, 154, 157, 158, 159, 160,
+    162, 163, 164, 166, 167, 170, 172, 174, 175, 180, 182, 184, 185, 186, 188,
+    190, 193, 194, 195, 198, 199, 200, 203, 210, 213
+  * added some Hakka characters
+  * added french po file (Closes: #305811)
+  * added Firefly's bitmap fonts (Big5 and GB2312 only)
+
+ -- Arne Goetje <arne@linux.org.tw>  Sun,  1 May 2005 21:49:04 +0800
+
+ttf-arphic-uming (0.0.20050328-2) unstable; urgency=low
+
+  * Initial release for Debian main (Closes: #297659)
+  * added config file for fontconfig (>= 2.3.1)
+
+ -- Arne Goetje <arne@linux.org.tw>  Sun,  3 Apr 2005 13:00:14 +0800
+
+ttf-arphic-uming (0.0.20050328-1) unstable; urgency=low
+
+  * finished HKSCS support for CJK Ext. A
+  * added anchors for latin characters and diacritics
+  * added circled latin characters and numbers 11-20
+  * simplified the font for saving space
+
+ -- Arne Goetje <arne@linux.org.tw>  Tue, 29 Mar 2005 00:00:50 +0800
+
+ttf-arphic-uming (0.0.20050214-1) unstable; urgency=low
+
+  * finished HKSCS support for Basic CJK
+  * added new characters for the upcoming Unicode 4.1.0 standard.
+  * moved the HKSCS glyphs from PUA to their final destination according to
+    the upcoming Unicode 4.1.0 standard.
+  * created references to PUA for HKSCS compatibility.
+
+ -- Arne Goetje <arne@linux.org.tw>  Mon, 14 Feb 2005 12:19:07 +0800
+
+ttf-arphic-uming (0.0.20041205-2) unstable; urgency=low
+
+  * This is a test release, not for public use.
+
+ -- Arne Goetje <arne@linux.org.tw>  Mon, 10 Jan 2005 15:23:44 +0800
+
+ttf-arphic-uming (0.0.20041205-1) unstable; urgency=low
+
+  * changed the debian packaging, merged the MBE package into
+    this one.
+  * completed HKSCS for radicals 030, 060, 109, 148, 160, 164, 169, 170, 171, 
+    172, 173, 174, 175, 177, 178, 179, 180, 184, 186, 188, 190, 191, 196 
+    in Basic CJK.
+  * completed Japanese for radicals 60, 109 in Basic CJK.
+  * completed HKSCS for radical 060 in CJK Ext. B.
+  * added seperate Contributers file
+  * package depends now on xdelta
+
+ -- Arne Goetje <arne@linux.org.tw>  Sun, 12 Dec 2004 11:16:03 +0800
+
+ttf-arphic-uming (0.0.20041031-2) unstable; urgency=low
+
+  * updated the control file
+
+ -- Arne Goetje <arne@linux.org.tw>  Tue, 16 Nov 2004 15:17:41 +0800
+
+ttf-arphic-uming (0.0.20041031-1) unstable; urgency=low
+
+  * completed HKSCS for radicals 197, 198, 199, 200, 201, 203, 205, 208, 209,
+    211, 212, 214.
+    Thanks to Akar Chen for contributing the mingti version.
+
+ -- Arne Goetje <arne@linux.org.tw>  Sun, 31 Oct 2004 16:00:29 +0800
+
+ttf-arphic-uming (0.0.20040926-1) unstable; urgency=low
+
+  * completed radicals 001, 004, 008, 012, 014, 015, 016, 021, 034, 045, 051
+    and 055 in Basic CJK.
+
+ -- Arne Goetje <arne@linux.org.tw>  Sun, 26 Sep 2004 22:27:54 +0800
+
+ttf-arphic-uming (0.0.20040919-1) unstable; urgency=low
+
+  * completed radical 009 in Basic CJK.
+  * fixed Kangxi radicals
+  * added CJK compatibility glyphs
+
+ -- Arne Goetje <arne@linux.org.tw>  Sun, 19 Sep 2004 17:31:14 +0800
+
+ttf-arphic-uming (0.0.20040823-1) unstable; urgency=low
+
+  * added some japanese glyphs
+  * font name change to AR PL ShanHeiSun Uni
+  * corrected hints file
+
+ -- Arne Goetje <arne@linux.org.tw>  Mon, 23 Aug 2004 22:12:13 +0800
+
+ttf-arphic-uming (0.0.20040229-3) unstable; urgency=low
+
+  * Set the font resulution in the hints file to 100
+  * Adjusted dependency handling
+
+ -- Arne Goetje <arne@linux.org.tw>  Sun, 25 Apr 2004 13:29:11 +0800
+
+ttf-arphic-uming (0.0.20040229-2) unstable; urgency=low
+
+  * fixed a bug in the hints file
+
+ -- Arne Goetje <arne@linux.org.tw>  Wed,  3 Mar 2004 21:37:27 +0800
+
+ttf-arphic-uming (0.0.20040229-1) unstable; urgency=low
+
+  * added some more HKSCS glyphs
+
+ -- Arne Goetje <arne@linux.org.tw>  Sun, 29 Feb 2004 16:54:39 +0800
+
+ttf-arphic-uming (0.0.20040111-1) unstable; urgency=low
+
+  * added some more HKSCS glyphs
+
+ -- Arne Goetje <arne@linux.org.tw>  Sun, 11 Jan 2004 20:35:16 +0800
+
+ttf-arphic-uming (0.0.20040104-1) unstable; urgency=low
+
+  * corrected Bopomofo Extended glyphs
+  * added some ore HKSCS and CNS11643 glyphs
+
+ -- Arne Goetje <arne@linux.org.tw>  Sun,  4 Jan 2004 17:28:16 +0800
+
+ttf-arphic-uming (0.0.20031109-1) unstable; urgency=low
+
+  * added Hakka tone marks
+
+ -- Arne Goetje <arne@linux.org.tw>  Sun,  9 Nov 2003 17:24:14 +0800
+
+ttf-arphic-uming (0.0.20031102-1) unstable; urgency=low
+
+  * changed filename to uming.ttf
+
+ -- Arne Goetje <arne@linux.org.tw>  Sun,  2 Nov 2003 17:16:45 +0800
+
+ttf-arphic-uming (0.0.20030909-1) unstable; urgency=low
+
+  * added Bopomofo Extensions for Hakka, Minnan
+  * added some more HKSCS glyphs
+
+ -- Arne Goetje <arne@linux.org.tw>  Tue,  9 Sep 2003 10:56:14 +0800
+
+ttf-arphic-uming (0.0.20030727) unstable; urgency=low
+
+  * added some HKSCS glyphs
+
+ -- Arne Goetje <arne@linux.org.tw>  Sun, 27 Jul 2003 21:38:29 +0800
+
+ttf-arphic-uming (0.0.20030704) unstable; urgency=low
+
+  * added some glyphs and corrected others
+
+ -- Arne Goetje <arne@linux.org.tw>  Fri,  4 Jul 2003 23:11:42 +0800
+
+ttf-arphic-uming (0.0.20030504-1) unstable; urgency=low
+
+  * removed hints from font. Should fix ugly appearance in X.
+
+ -- Arne Goetje <arne@linux.org.tw>  Sun,  4 May 2003 17:12:02 +0800
+
+ttf-arphic-uming (0.0.20030501-1) unstable; urgency=low
+
+  * Initial release.
+  * Special thanks to Arphic Technology Co., Ltd. and to the
+    Chinese GNU/Linux Extension Team for their effort in bringing
+    our dream to reality!  :-)
+  * Thanks also to Anthony Fok <foka@debian.org> for packaging the original 
+    fonts from Arphic Technology Co., Ltd..
+
+ -- Arne Goetje <arne@linux.org.tw>  Thu, 1 May 2003 00:00:11 +0800

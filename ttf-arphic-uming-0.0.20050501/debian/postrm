@@ -1,0 +1,17 @@
+#!/bin/sh
+
+set -e
+
+. /usr/share/debconf/confmodule
+
+package=ttf-arphic-uming
+
+# fontconfig
+if [ -e /etc/fonts/conf.d/${package} ]; then
+    rm /etc/fonts/conf.d/${package}
+    if [ -x /usr/bin/fc-cache ]; then
+        /usr/bin/fc-cache
+    fi
+fi
+
+#DEBHELPER#

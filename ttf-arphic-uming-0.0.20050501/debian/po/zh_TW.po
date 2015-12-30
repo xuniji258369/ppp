@@ -1,0 +1,58 @@
+#
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#
+#    Some information specific to po-debconf are available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+#    Developers do not need to manually edit POT or PO files.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-12-27 14:16+0800\n"
+"PO-Revision-Date: 2005-01-12 13:34+0800\n"
+"Last-Translator: Andrew Lee <andrew@linux.org.tw>\n"
+"Language-Team: LANGUAGE <zh_TW@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: TAIWAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#. Type: select
+#: ../templates:3
+msgid "Unicode, MBE, Both"
+msgstr "Unicode, MBE, Both"
+
+#. Type: select
+#: ../templates:5
+msgid "Font variant to install:"
+msgstr "安裝的字體："
+
+#. Type: select
+#: ../templates:5
+msgid "This font contains bopomofo extended glyphs, which are used to annotate Chinese glyphs to show how the characters should be pronounced. These bopomofo extended glyphs are used for some minority languages, like Taiwanese and Hakka. They are mainly used in Taiwan."
+msgstr "這個字型包含ㄅㄆㄇㄈ延伸注音符號，注音符號是用來標示華語的讀音，而這些延伸注音符號是給一些較少人使用的華語，如：閩南語及客家語。這些符號大多在台灣使用。"
+
+#. Type: select
+#: ../templates:5
+msgid "There are two variants of these bopomofo extended glyphs in use, one which conforms to the Unicode standard, and one, called Modern Bopomofo Extensions (MBE), which aims to be easier to read and write."
+msgstr "這裡有兩種ㄅㄆㄇㄈ注音延伸符號，一種是來自古早的 Unicode 規格，另外一個，是新式的ㄅㄆㄇㄈ注音延伸符號(MBE)，新式的符號較好書寫及閱讀。"
+
+#. Type: select
+#: ../templates:5
+msgid "The Unicode variant also contains the MBE variants encoded as TTF stylistic alternatives (SALT). As only few programs can support this feature, users who prefer to use the MBE glyphs should install the MBE variant. More information on this can be found on the project homepage: http://www.freedesktop.org/wiki/Software_2fCJKUnifonts"
+msgstr "這新式注音延伸符號(MBE)在編碼上是採用萬國碼異體字的作法，實作上使用了 TTF 的『另類風格』的功能。目前只有少數程式可以支援這個特色，想要使用新式注音延伸符號的使用者請選擇安裝 MBE 字體。更多關於這部份的資訊，可在本計畫網站找到： http://www.freedesktop.org/wiki/Software_2fCJKUnifonts"
+
+#. Type: select
+#: ../templates:5
+msgid "If in doubt, please select \"Unicode\"."
+msgstr "若您仍有疑惑，請選擇 \"Unicode\"。"
+

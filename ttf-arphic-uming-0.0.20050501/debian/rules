@@ -1,0 +1,67 @@
+#!/usr/bin/make -f
+#
+# debian/rules file for ttf-arphic-uming for Debian.
+# GNU GPL v2, Copyright (C) 1999-2001, Anthony Fok <foka@debian.org>
+
+package = ttf-arphic-uming
+d = debian/$(package)
+
+fonttype = truetype
+supplier = arphic
+fontname = uming
+
+dest_fontpath = usr/share/fonts/$(fonttype)/$(supplier)
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+# This is the debhelper compatibility version to use.
+export DH_COMPAT=3
+
+build: build-stamp
+build-stamp:
+	dh_testdir
+
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp
+
+	dh_clean
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs $(dest_fontpath) etc/defoma/hints usr/share/ttf-arphic-uming
+
+	# Add here commands to install the package into debian/ttf-arphic-uming.
+	install -m644 -p $(fontname).ttf $(d)/$(dest_fontpath)/
+	install -m644 -p debian/$(package).hints $(d)/etc/defoma/hints/
+	install -m644 -p debian/$(package)-mbe.hints $(d)/etc/defoma/hints/
+	install -m644 -p uming2mbe.xdelta $(d)/usr/share/ttf-arphic-uming/
+	install -m644 -p umingmbe2uming.xdelta $(d)/usr/share/ttf-arphic-uming/
+	install -m644 -p ttf-arphic-uming $(d)/usr/share/ttf-arphic-uming/
+
+# Build architecture-independent files here.
+binary-indep: build install
+	dh_testdir
+	dh_testroot
+	dh_installdebconf
+	dh_installdocs license/ README README.Bitmap CONTRIBUTERS fonts.dir fonts.scale fonts.alias encodings.dir
+	dh_installchangelogs
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+# Build architecture-dependent files here.
+binary-arch: build install
+# We have nothing to do by default.
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install

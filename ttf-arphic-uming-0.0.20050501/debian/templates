@@ -1,0 +1,21 @@
+Template: ttf-arphic-uming/variant
+Type: select
+_Choices: Unicode, MBE, Both
+Default: Unicode
+_Description: Font variant to install:
+ This font contains bopomofo extended glyphs, which are used to annotate
+ Chinese glyphs to show how the characters should be pronounced. These
+ bopomofo extended glyphs are used for some minority languages, like
+ Taiwanese and Hakka. They are mainly used in Taiwan.
+ .
+ There are two variants of these bopomofo extended glyphs in use, one which
+ conforms to the Unicode standard, and one, called Modern Bopomofo
+ Extensions (MBE), which aims to be easier to read and write.
+ .
+ The Unicode variant also contains the MBE variants encoded as TTF
+ stylistic alternatives (SALT). As only few programs can support this
+ feature, users who prefer to use the MBE glyphs should install the MBE
+ variant. More information on this can be found on the project homepage:
+ http://www.freedesktop.org/wiki/Software_2fCJKUnifonts
+ .
+ If in doubt, please select "Unicode".

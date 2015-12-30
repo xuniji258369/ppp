@@ -1,0 +1,20 @@
+category truetype
+begin /usr/share/fonts/truetype/arphic/umingmbe.ttf
+  Family = Arphic-Ming
+  FontName = ShanHeiSun-Uni-MBE
+  Encoding = Unicode
+  Location = Chinese-Taiwan Chinese-China English Japanese
+  Charset = ISO10646-1 ISO10646-2 BIG5 GB2312 GBK GB18030 ISO8859-1 ISO8859-2 ISO8859-3 ISO8859-4 ISO8859-7 ISO8859-9 ISO8859-10 ISO8859-13 ISO8859-14 ISO8859-15 JISX0212 JISX0208 JISX0201
+  UniCharset = BIG5 GB2312 GBK GB18030 ISO8859-1 ISO8859-2 ISO8859-3 ISO8859-4 ISO8859-7 ISO8859-9 ISO8859-10 ISO8859-13 ISO8859-14 ISO8859-15 JISX0212 JISX0208 JISX0201
+  GeneralFamily = Ming
+  Weight = Light
+  Width = Variable
+  Shape = Upright
+  Alias = Arphic-MingUniMBE ArphicMingUniMBE
+  Foundry = Arphic
+  Priority = 20
+  X-Family = AR_PL_ShanHeiSun_Uni_MBE
+  X-Weight = medium
+  X-ElementAlias = foundry=arphic:family=umingmbe:resx=100:resy=100
+  TTCap = halfwidth-bw=0.5 italic-angle=0.167 no-roblique no-oblique no-ritalic
+end
